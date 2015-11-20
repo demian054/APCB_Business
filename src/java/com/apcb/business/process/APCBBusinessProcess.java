@@ -6,10 +6,10 @@
 
 package com.apcb.business.process;
 
-import com.apcb.ticketshandler.services.TicketHandlerServices;
+import com.apcb.ticketshandler.services.TicketsHandlerServices;
 import com.apcb.utils.conection.ServiceGenerator;
 import com.apcb.utils.entities.Message;
-import com.apcb.utils.entities.PropertiesReader;
+import com.apcb.utils.utils.PropertiesReader;
 import com.apcb.utils.entities.Request;
 import com.apcb.utils.entities.Response;
 import com.apcb.utils.ticketsHandler.Enums.MessagesTypeEnum;
@@ -23,14 +23,17 @@ import org.apache.log4j.Logger;
  * @author Demian
  */
 public class APCBBusinessProcess {
-    private static final Logger log = LogManager.getLogger(APCBBusinessProcess.class);
-    private final Gson gson = new Gson(); 
+    private Logger log = LogManager.getLogger(APCBBusinessProcess.class);
+    private Gson gson = new Gson(); 
 
     public Response ticketAirAvailAndPrice(Request request) throws IOException, Exception {
- 
-        TicketHandlerServices ticketHandlerServices = ServiceGenerator.ServiceGenerator(TicketHandlerServices.class);
-        Response response = gson.fromJson(ticketHandlerServices.ticketAirAvail(gson.toJson(request)),Response.class);
-
+        Response response = new Response();
+        TicketsHandlerServices ticketHandlerServices = ServiceGenerator.ServiceGenerator(TicketsHandlerServices.class);
+        if (ticketHandlerServices==null){
+            response.setMessage(new Message(MessagesTypeEnum.ErrorAccess_Business));
+            return response;
+        }
+        response = gson.fromJson(ticketHandlerServices.ticketAirAvail(gson.toJson(request)),Response.class); 
         return response;
     }
     

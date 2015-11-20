@@ -45,8 +45,8 @@
     </target>
     <target name="wsimport-client-TicketHandlerServices" depends="wsimport-init">
         <mkdir dir="${build.generated.dir}/jax-wsCache/TicketHandlerServices"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/TicketHandlerServices" destdir="${build.generated.dir}/jax-wsCache/TicketHandlerServices" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/TicketHandlerServices/wsdl/localhost_8080/APCB_TicketsHandler/TicketHandlerServices.wsdl" catalog="catalog.xml" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/APCB_TicketsHandler/TicketHandlerServices?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/TicketHandlerServices/wsdl/localhost_8080/APCB_TicketsHandler/TicketHandlerServices.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/TicketHandlerServices" destdir="${build.generated.dir}/jax-wsCache/TicketHandlerServices" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/TicketHandlerServices/wsdl/localhost_8080/APCB_TicketsHandler/TicketsHandlerServices.wsdl" catalog="catalog.xml" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/APCB_TicketsHandler/TicketHandlerServices?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/TicketHandlerServices/wsdl/localhost_8080/APCB_TicketsHandler/TicketsHandlerServices.wsdl"/>
             <produces dir="${build.generated.dir}/jax-wsCache/TicketHandlerServices"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
