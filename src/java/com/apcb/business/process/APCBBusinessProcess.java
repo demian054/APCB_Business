@@ -9,10 +9,10 @@ package com.apcb.business.process;
 import com.apcb.ticketshandler.services.TicketsHandlerServices;
 import com.apcb.utils.conection.ServiceGenerator;
 import com.apcb.utils.entities.Message;
-import com.apcb.utils.utils.PropertiesReader;
 import com.apcb.utils.entities.Request;
 import com.apcb.utils.entities.Response;
 import com.apcb.utils.ticketsHandler.Enums.MessagesTypeEnum;
+import com.apcb.utils.ticketsHandler.entities.Travel;
 import com.google.gson.Gson;
 import java.io.IOException;
 import org.apache.log4j.LogManager;
@@ -34,6 +34,16 @@ public class APCBBusinessProcess {
             return response;
         }
         response = gson.fromJson(ticketHandlerServices.ticketAirAvail(gson.toJson(request)),Response.class); 
+        
+        //request.setBeam(response.getBeam());
+        
+        //response = gson.fromJson(ticketHandlerServices.ticketAirPrice(gson.toJson(request)),Response.class); 
+        
+        //Travel travel = gson.fromJson(response.getBeam().getObjectStr(),Travel.class);
+        //travel.set
+        
+        
+        
         return response;
     }
     

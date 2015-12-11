@@ -10,15 +10,34 @@
 <message name="ticketAirAvailResponse">
 <part name="parameters" element="tns:ticketAirAvailResponse" />
 </message>
+<message name="ticketAirPrice">
+<part name="parameters" element="tns:ticketAirPrice" />
+</message>
+<message name="ticketAirPriceResponse">
+<part name="parameters" element="tns:ticketAirPriceResponse" />
+</message>
 <portType name="TicketsHandlerServices">
 <operation name="ticketAirAvail">
 <input wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirAvailRequest" message="tns:ticketAirAvail" />
 <output wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirAvailResponse" message="tns:ticketAirAvailResponse" />
 </operation>
+<operation name="ticketAirPrice">
+<input wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirPriceRequest" message="tns:ticketAirPrice" />
+<output wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirPriceResponse" message="tns:ticketAirPriceResponse" />
+</operation>
 </portType>
 <binding name="TicketsHandlerServicesPortBinding" type="tns:TicketsHandlerServices">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
 <operation name="ticketAirAvail">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="ticketAirPrice">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
