@@ -35,15 +35,14 @@ public class APCBBusinessProcess {
         }
         response = gson.fromJson(ticketHandlerServices.ticketAirAvail(gson.toJson(request)),Response.class); 
         
-        //request.setBeam(response.getBeam());
+        request.setBeam(response.getBeam());
         
-        //response = gson.fromJson(ticketHandlerServices.ticketAirPrice(gson.toJson(request)),Response.class); 
+        Travel travel = gson.fromJson(response.getBeam().getObjectStr(),Travel.class);
         
-        //Travel travel = gson.fromJson(response.getBeam().getObjectStr(),Travel.class);
-        //travel.set
-        
-        
-        
+        if (travel.getItinerary().length>0){
+            response = gson.fromJson(ticketHandlerServices.ticketAirPrice(gson.toJson(request)),Response.class); 
+        }
+
         return response;
     }
     
