@@ -12,7 +12,7 @@ import com.apcb.utils.entities.Message;
 import com.apcb.utils.entities.Request;
 import com.apcb.utils.entities.Response;
 import com.apcb.utils.ticketsHandler.Enums.MessagesTypeEnum;
-import com.apcb.utils.ticketsHandler.entities.Travel;
+import com.apcb.utils.ticketsHandler.entities.APCB_Travel;
 import com.google.gson.Gson;
 import java.io.IOException;
 import org.apache.log4j.LogManager;
@@ -30,14 +30,14 @@ public class APCBBusinessProcess {
         Response response = new Response();
         TicketsHandlerServices ticketHandlerServices = ServiceGenerator.ServiceGenerator(TicketsHandlerServices.class);
         if (ticketHandlerServices==null){
-            response.setMessage(new Message(MessagesTypeEnum.ErrorAccess_Business));
+            response.setMessage(new Message(MessagesTypeEnum.ErrorAccess_TicketsHandler));
             return response;
         }
         response = gson.fromJson(ticketHandlerServices.ticketAirAvail(gson.toJson(request)),Response.class); 
         
         request.setBeam(response.getBeam());
         
-        Travel travel = gson.fromJson(response.getBeam().getObjectStr(),Travel.class);
+        APCB_Travel travel = gson.fromJson(response.getBeam().getObjectStr(),APCB_Travel.class);
         
         if (travel.getItinerary().length>0){
             response = gson.fromJson(ticketHandlerServices.ticketAirPrice(gson.toJson(request)),Response.class); 
