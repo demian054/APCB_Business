@@ -27,6 +27,7 @@ public class APCBBusinessProcess {
     private Gson gson = new Gson(); 
 
     public Response ticketAirAvailAndPrice(Request request) throws IOException, Exception {
+        log.info("APCBBusinessProcess -> ticketAirAvailAndPrice ini");
         Response response = new Response();
         TicketsHandlerServices ticketHandlerServices = ServiceGenerator.ServiceGenerator(TicketsHandlerServices.class);
         if (ticketHandlerServices==null){
@@ -42,7 +43,7 @@ public class APCBBusinessProcess {
         if (travel.getItinerary().length>0){
             response = gson.fromJson(ticketHandlerServices.ticketAirPrice(gson.toJson(request)),Response.class); 
         }
-
+        log.info("APCBBusinessProcess -> ticketAirAvailAndPrice end");
         return response;
     }
     

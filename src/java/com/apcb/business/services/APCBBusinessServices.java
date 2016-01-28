@@ -31,6 +31,7 @@ public class APCBBusinessServices {
      */
     @WebMethod(operationName = "ticketAirAvailAndPrice")
     public String ticketAirAvailAndPrice(@WebParam(name = "request") String strRequest) {
+        log.info("APCBBusinessServices -> ticketAirAvailAndPrice ini");
         Response response = new Response();
         try {
             Request request = new Request(strRequest); 
@@ -40,6 +41,7 @@ public class APCBBusinessServices {
             response.setMessage(new Message(MessagesTypeEnum.Error_AplicationErrorNotHandler));
             log.error(response.getMessage().getMsgDesc(), e);
         }
+        log.info("APCBBusinessServices -> ticketAirAvailAndPrice end");
         return gson.toJson(response);
     }
 }
