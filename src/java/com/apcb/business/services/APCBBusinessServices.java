@@ -10,7 +10,7 @@ import com.apcb.business.process.APCBBusinessProcess;
 import com.apcb.utils.entities.Message;
 import com.apcb.utils.entities.Request;
 import com.apcb.utils.entities.Response;
-import com.apcb.utils.ticketsHandler.Enums.MessagesTypeEnum;
+import com.apcb.utils.ticketsHandler.enums.MessagesTypeEnum;
 import com.google.gson.Gson;
 import javax.jws.WebService;
 import javax.jws.WebMethod;
