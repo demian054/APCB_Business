@@ -6,6 +6,7 @@
 
 package com.apcb.business.process;
 
+import com.apcb.paymentshandler.services.APCBPaymentsHandrerServices;
 import com.apcb.ticketshandler.services.TicketsHandlerServices;
 import com.apcb.utils.conection.ServiceGenerator;
 import com.apcb.utils.entities.Message;
@@ -26,27 +27,103 @@ public class APCBBusinessProcess {
     private Logger log = LogManager.getLogger(APCBBusinessProcess.class);
     private Gson gson = new Gson(); 
 
-    public Response ticketAirAvailAndPrice(Request request) throws IOException, Exception {
-        log.info("APCBBusinessProcess -> ticketAirAvailAndPrice ini");
+    public Response ticketAvail(Request request) throws IOException, Exception  {
+        log.info("APCBBusinessProcess -> ticketReserv ini");
         Response response = new Response();
-        TicketsHandlerServices ticketHandlerServices = ServiceGenerator.ServiceGenerator(TicketsHandlerServices.class);
+         TicketsHandlerServices ticketHandlerServices = ServiceGenerator.ServiceGenerator(TicketsHandlerServices.class);
         if (ticketHandlerServices==null){
             response.setMessage(new Message(MessagesTypeEnum.ErrorAccess_TicketsHandler));
             return response;
         }
-        response = gson.fromJson(ticketHandlerServices.ticketAirAvail(gson.toJson(request)),Response.class); 
-
-        if (response.getMessage().getMsgCode().equals("200")){
-            request.setBeam(response.getBeam());
-            APCB_Travel travel = gson.fromJson(response.getBeam().getObjectStr(),APCB_Travel.class);
-        
-            if (travel.getItinerary().length>0){
-                response = gson.fromJson(ticketHandlerServices.ticketAirPrice(gson.toJson(request)),Response.class); 
-            }
-        }
-        
-        log.info("APCBBusinessProcess -> ticketAirAvailAndPrice end");
+        response = gson.fromJson(ticketHandlerServices.ticketAirAvail(gson.toJson(request)),Response.class);  
         return response;
     }
+
+    public Response ticketPrice(Request request) throws IOException, Exception  {
+        log.info("APCBBusinessProcess -> ticketReserv ini");
+        Response response = new Response();
+         TicketsHandlerServices ticketHandlerServices = ServiceGenerator.ServiceGenerator(TicketsHandlerServices.class);
+        if (ticketHandlerServices==null){
+            response.setMessage(new Message(MessagesTypeEnum.ErrorAccess_TicketsHandler));
+            return response;
+        }
+        response = gson.fromJson(ticketHandlerServices.ticketAirPrice(gson.toJson(request)),Response.class);  
+        return response;
+    }
+    
+
+    public Response ticketReserv(Request request) throws IOException, Exception  {
+        log.info("APCBBusinessProcess -> ticketReserv ini");
+        Response response = new Response();
+         TicketsHandlerServices ticketHandlerServices = ServiceGenerator.ServiceGenerator(TicketsHandlerServices.class);
+        if (ticketHandlerServices==null){
+            response.setMessage(new Message(MessagesTypeEnum.ErrorAccess_TicketsHandler));
+            return response;
+        }
+        response = gson.fromJson(ticketHandlerServices.ticketAirReserv(gson.toJson(request)),Response.class);  
+        return response;
+    }
+    
+    public Response ticketDemand(Request request) throws IOException, Exception  {
+        log.info("APCBBusinessProcess -> ticketDemand ini");
+        Response response = new Response();
+         TicketsHandlerServices ticketHandlerServices = ServiceGenerator.ServiceGenerator(TicketsHandlerServices.class);
+        if (ticketHandlerServices==null){
+            response.setMessage(new Message(MessagesTypeEnum.ErrorAccess_TicketsHandler));
+            return response;
+        }
+        response = gson.fromJson(ticketHandlerServices.ticketAirDemand(gson.toJson(request)),Response.class);  
+        return response;
+    }
+    
+    public Response ticketCancel(Request request) throws IOException, Exception  {
+        log.info("APCBBusinessProcess -> ticketCancel ini");
+        Response response = new Response();
+         TicketsHandlerServices ticketHandlerServices = ServiceGenerator.ServiceGenerator(TicketsHandlerServices.class);
+        if (ticketHandlerServices==null){
+            response.setMessage(new Message(MessagesTypeEnum.ErrorAccess_TicketsHandler));
+            return response;
+        }
+        response = gson.fromJson(ticketHandlerServices.ticketAirCancel(gson.toJson(request)),Response.class);  
+        return response;
+    }
+
+    
+    public Response payCreate(Request request) throws  IOException, Exception  {
+         log.info("APCBBusinessProcess -> payCreate ini");
+        Response response = new Response();
+         APCBPaymentsHandrerServices APCBPaymentsHandrerServices = ServiceGenerator.ServiceGenerator(APCBPaymentsHandrerServices.class);
+        if (APCBPaymentsHandrerServices==null){
+            response.setMessage(new Message(MessagesTypeEnum.ErrorAccess_TicketsHandler));
+            return response;
+        }
+        response = gson.fromJson(APCBPaymentsHandrerServices.createPay(gson.toJson(request)),Response.class);  
+        return response;
+    }
+    
+    public Response payComplete(Request request) throws  IOException, Exception {
+        log.info("APCBBusinessProcess -> payComplete ini");
+        Response response = new Response();
+         APCBPaymentsHandrerServices APCBPaymentsHandrerServices = ServiceGenerator.ServiceGenerator(APCBPaymentsHandrerServices.class);
+        if (APCBPaymentsHandrerServices==null){
+            response.setMessage(new Message(MessagesTypeEnum.ErrorAccess_TicketsHandler));
+            return response;
+        }
+        response = gson.fromJson(APCBPaymentsHandrerServices.completePay(gson.toJson(request)),Response.class);  
+        return response;
+    }
+        
+    public Response payAnnular(Request request)throws  IOException, Exception  {
+        log.info("APCBBusinessProcess -> payComplete ini");
+        Response response = new Response();
+         APCBPaymentsHandrerServices APCBPaymentsHandrerServices = ServiceGenerator.ServiceGenerator(APCBPaymentsHandrerServices.class);
+        if (APCBPaymentsHandrerServices==null){
+            response.setMessage(new Message(MessagesTypeEnum.ErrorAccess_TicketsHandler));
+            return response;
+        }
+        response = gson.fromJson(APCBPaymentsHandrerServices.annularPay(gson.toJson(request)),Response.class);  
+        return response;
+    }
+        
     
 }
