@@ -8,6 +8,10 @@
 
 <xs:element name="ticketAirCancelResponse" type="tns:ticketAirCancelResponse" />
 
+<xs:element name="ticketAirConsult" type="tns:ticketAirConsult" />
+
+<xs:element name="ticketAirConsultResponse" type="tns:ticketAirConsultResponse" />
+
 <xs:element name="ticketAirDemand" type="tns:ticketAirDemand" />
 
 <xs:element name="ticketAirDemandResponse" type="tns:ticketAirDemandResponse" />
@@ -19,6 +23,18 @@
 <xs:element name="ticketAirReserv" type="tns:ticketAirReserv" />
 
 <xs:element name="ticketAirReservResponse" type="tns:ticketAirReservResponse" />
+
+<xs:complexType name="ticketAirConsult">
+<xs:sequence>
+<xs:element name="request" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ticketAirConsultResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
 
 <xs:complexType name="ticketAirCancel">
 <xs:sequence>

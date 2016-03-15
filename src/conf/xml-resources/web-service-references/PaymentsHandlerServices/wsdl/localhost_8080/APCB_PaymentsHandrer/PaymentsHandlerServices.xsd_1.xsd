@@ -1,0 +1,66 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://services.paymentsHandler.apcb.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services.paymentsHandler.apcb.com/">
+
+<xs:element name="annularPay" type="tns:annularPay" />
+
+<xs:element name="annularPayResponse" type="tns:annularPayResponse" />
+
+<xs:element name="completePay" type="tns:completePay" />
+
+<xs:element name="completePayResponse" type="tns:completePayResponse" />
+
+<xs:element name="consultPay" type="tns:consultPay" />
+
+<xs:element name="consultPayResponse" type="tns:consultPayResponse" />
+
+<xs:element name="createPay" type="tns:createPay" />
+
+<xs:element name="createPayResponse" type="tns:createPayResponse" />
+
+<xs:complexType name="completePay">
+<xs:sequence>
+<xs:element name="strRequest" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="completePayResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultPay">
+<xs:sequence>
+<xs:element name="strRequest" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="consultPayResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="annularPay">
+<xs:sequence>
+<xs:element name="strRequest" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="annularPayResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createPay">
+<xs:sequence>
+<xs:element name="strRequest" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createPayResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

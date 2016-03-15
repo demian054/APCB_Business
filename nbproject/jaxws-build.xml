@@ -59,21 +59,21 @@
         <delete dir="${build.generated.sources.dir}/jax-ws/com/apcb/ticketshandler/services"/>
         <delete dir="${build.generated.dir}/jax-wsCache/TicketHandlerServices"/>
     </target>
-    <target name="wsimport-client-APCBPaymentsHandrerServices" depends="wsimport-init">
-        <mkdir dir="${build.generated.dir}/jax-wsCache/APCBPaymentsHandrerServices"/>
-        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/APCBPaymentsHandrerServices" destdir="${build.generated.dir}/jax-wsCache/APCBPaymentsHandrerServices" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/APCBPaymentsHandrerServices/wsdl/localhost_8080/APCB_PaymentsHandrer/APCBPaymentsHandrerServices.wsdl" catalog="catalog.xml" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/APCB_PaymentsHandrer/APCBPaymentsHandrerServices?wsdl" xnocompile="true" xendorsed="true">
-            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/APCBPaymentsHandrerServices/wsdl/localhost_8080/APCB_PaymentsHandrer/APCBPaymentsHandrerServices.wsdl"/>
-            <produces dir="${build.generated.dir}/jax-wsCache/APCBPaymentsHandrerServices"/>
+    <target name="wsimport-client-PaymentsHandlerServices" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/PaymentsHandlerServices"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/PaymentsHandlerServices" destdir="${build.generated.dir}/jax-wsCache/PaymentsHandlerServices" wsdl="${basedir}/${conf-dir}xml-resources/web-service-references/PaymentsHandlerServices/wsdl/localhost_8080/APCB_PaymentsHandrer/PaymentsHandlerServices.wsdl" catalog="catalog.xml" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/APCB_PaymentsHandrer/PaymentsHandlerServices?wsdl" xnocompile="true" xendorsed="true">
+            <depends file="${basedir}/${conf-dir}xml-resources/web-service-references/PaymentsHandlerServices/wsdl/localhost_8080/APCB_PaymentsHandrer/PaymentsHandlerServices.wsdl"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/PaymentsHandlerServices"/>
         </wsimport>
         <copy todir="${build.generated.sources.dir}/jax-ws">
-            <fileset dir="${build.generated.dir}/jax-wsCache/APCBPaymentsHandrerServices">
+            <fileset dir="${build.generated.dir}/jax-wsCache/PaymentsHandlerServices">
                 <include name="**/*.java"/>
             </fileset>
         </copy>
     </target>
-    <target name="wsimport-client-clean-APCBPaymentsHandrerServices" depends="-init-project">
+    <target name="wsimport-client-clean-PaymentsHandlerServices" depends="-init-project">
         <delete dir="${build.generated.sources.dir}/jax-ws/com/apcb/paymentshandler/services"/>
-        <delete dir="${build.generated.dir}/jax-wsCache/APCBPaymentsHandrerServices"/>
+        <delete dir="${build.generated.dir}/jax-wsCache/PaymentsHandlerServices"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-TicketHandlerServices, wsimport-client-APCBPaymentsHandrerServices"/>
+    <target name="wsimport-client-generate" depends="wsimport-client-TicketHandlerServices, wsimport-client-PaymentsHandlerServices"/>
 </project>

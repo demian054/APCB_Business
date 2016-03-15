@@ -16,13 +16,13 @@
 
 <xs:element name="createPayResponse" type="tns:createPayResponse" />
 
-<xs:complexType name="createPay">
+<xs:complexType name="completePay">
 <xs:sequence>
 <xs:element name="strRequest" type="xs:string" minOccurs="0" />
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="createPayResponse">
+<xs:complexType name="completePayResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0" />
 </xs:sequence>
@@ -40,18 +40,6 @@
 </xs:sequence>
 </xs:complexType>
 
-<xs:complexType name="completePay">
-<xs:sequence>
-<xs:element name="strRequest" type="xs:string" minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="completePayResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
-
 <xs:complexType name="annularPay">
 <xs:sequence>
 <xs:element name="strRequest" type="xs:string" minOccurs="0" />
@@ -59,6 +47,18 @@
 </xs:complexType>
 
 <xs:complexType name="annularPayResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createPay">
+<xs:sequence>
+<xs:element name="strRequest" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="createPayResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0" />
 </xs:sequence>
