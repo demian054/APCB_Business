@@ -32,7 +32,7 @@ public class APCBBusinessServices {
      */
     @WebMethod(operationName = "ticketAirAvailAndPrice")
     public String ticketAirAvailAndPrice(@WebParam(name = "request") String strRequest) {
-        log.info("APCBBusinessServices -> ticketAirAvailAndPrice ini");
+        log.info("APCBBusinessServices -> ticketAirAvailAndPrice ini -> "+gson.toJson(strRequest));
         Request request = new Request(strRequest); 
         Response response;
         try {
@@ -55,8 +55,9 @@ public class APCBBusinessServices {
             response.setMessage(new Message(MessagesTypeEnum.Error_AplicationErrorNotHandler));
             log.error(response.getMessage().getMsgDesc(), e);
         }
-        log.info("APCBBusinessServices -> ticketAirAvailAndPrice end");
-        return gson.toJson(response);
+        String strResponse = gson.toJson(response);
+        log.info("APCBBusinessServices -> ticketAirAvailAndPrice end -> "+strResponse);
+        return strResponse;
     }
     
     @WebMethod(operationName = "ticketReservAndPay")
@@ -70,7 +71,7 @@ public class APCBBusinessServices {
         try {
             PropertiesReader prop = new PropertiesReader("BusinessConfiguration");
             APCBBusinessProcess process = new APCBBusinessProcess();
-            log.info("APCBBusinessProcess -> ticketAirAvailAndPrice ini");
+            log.info("APCBBusinessProcess -> ticketReservAndPay ini");
             boolean error = false;
             
 
@@ -81,7 +82,7 @@ public class APCBBusinessServices {
                log.error(response.getMessage().getMsgDesc());
             } else {
                 //Reserva de voleto (Kiu)
-                request.setTravelInfo(responseTicketsHandler.getTravelInfo());
+                //request.setTravelInfo(responseTicketsHandler.getTravelInfo());
                 responseTicketsHandler = process.ticketReserv(request);
                 log.info("responseTicketsHandler -> ticketReserv ->"+gson.toJson(responseTicketsHandler));
                 //request.setTravelInfo(responseTicketsHandler.getTravelInfo());
@@ -163,8 +164,9 @@ public class APCBBusinessServices {
             response.setMessage(new Message(MessagesTypeEnum.Error_AplicationErrorNotHandler));
             log.error(response.getMessage().getMsgDesc(), e);
         }
-        log.info("APCBBusinessServices -> ticketReservAndPay end");
-        return gson.toJson(response);
+        String strResponse = gson.toJson(response);
+        log.info("APCBBusinessServices -> ticketReservAndPay end -> "+strResponse);
+        return strResponse;
     }
     
      
