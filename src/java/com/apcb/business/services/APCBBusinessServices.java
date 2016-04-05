@@ -126,7 +126,17 @@ public class APCBBusinessServices {
                     }
                     // Cancelar ticket (Kiu)
                     if (!responseTicketsHandler.getMessage().getMsgCode().equals("200") || !responsePaymentsHandler.getMessage().getMsgCode().equals("200")){
-
+                        
+                        if (!responseTicketsHandler.getMessage().getMsgCode().equals("200")){
+                            request.getPayMainInfo().setDescription(request.getPayMainInfo().getDescription()+" "
+                                    +responseTicketsHandler.getMessage().getMsgCode()+"-"
+                                    +responseTicketsHandler.getMessage().getMsgDesc());
+                        } else if (!responsePaymentsHandler.getMessage().getMsgCode().equals("200")){
+                             request.getPayMainInfo().setDescription(request.getPayMainInfo().getDescription()+" "
+                                    +responsePaymentsHandler.getMessage().getMsgCode()+"-"
+                                    +responsePaymentsHandler.getMessage().getMsgDesc());
+                        }
+                        
                         //request = new Request();
                         error = true;
                         responseReverse = process.ticketCancel(request);
