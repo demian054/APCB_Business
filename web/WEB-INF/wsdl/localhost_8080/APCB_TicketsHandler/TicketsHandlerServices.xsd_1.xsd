@@ -8,9 +8,13 @@
 
 <xs:element name="ticketAirCancelResponse" type="tns:ticketAirCancelResponse" />
 
-<xs:element name="ticketAirConsult" type="tns:ticketAirConsult" />
+<xs:element name="ticketAirConsultReserv" type="tns:ticketAirConsultReserv" />
 
-<xs:element name="ticketAirConsultResponse" type="tns:ticketAirConsultResponse" />
+<xs:element name="ticketAirConsultReservResponse" type="tns:ticketAirConsultReservResponse" />
+
+<xs:element name="ticketAirConsultTickets" type="tns:ticketAirConsultTickets" />
+
+<xs:element name="ticketAirConsultTicketsResponse" type="tns:ticketAirConsultTicketsResponse" />
 
 <xs:element name="ticketAirDemand" type="tns:ticketAirDemand" />
 
@@ -23,18 +27,6 @@
 <xs:element name="ticketAirReserv" type="tns:ticketAirReserv" />
 
 <xs:element name="ticketAirReservResponse" type="tns:ticketAirReservResponse" />
-
-<xs:complexType name="ticketAirConsult">
-<xs:sequence>
-<xs:element name="request" type="xs:string" minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
-
-<xs:complexType name="ticketAirConsultResponse">
-<xs:sequence>
-<xs:element name="return" type="xs:string" minOccurs="0" />
-</xs:sequence>
-</xs:complexType>
 
 <xs:complexType name="ticketAirCancel">
 <xs:sequence>
@@ -67,6 +59,30 @@
 </xs:complexType>
 
 <xs:complexType name="ticketAirDemandResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ticketAirConsultTickets">
+<xs:sequence>
+<xs:element name="request" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ticketAirConsultTicketsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ticketAirConsultReserv">
+<xs:sequence>
+<xs:element name="request" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ticketAirConsultReservResponse">
 <xs:sequence>
 <xs:element name="return" type="xs:string" minOccurs="0" />
 </xs:sequence>

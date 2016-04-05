@@ -4,17 +4,11 @@
 <xsd:import namespace="http://services.ticketsHandler.apcb.com/" schemaLocation="http://localhost:8080/APCB_TicketsHandler/TicketsHandlerServices?xsd=1" />
 </xsd:schema>
 </types>
-<message name="ticketAirConsult">
-<part name="parameters" element="tns:ticketAirConsult" />
+<message name="ticketAirAvail">
+<part name="parameters" element="tns:ticketAirAvail" />
 </message>
-<message name="ticketAirConsultResponse">
-<part name="parameters" element="tns:ticketAirConsultResponse" />
-</message>
-<message name="ticketAirReserv">
-<part name="parameters" element="tns:ticketAirReserv" />
-</message>
-<message name="ticketAirReservResponse">
-<part name="parameters" element="tns:ticketAirReservResponse" />
+<message name="ticketAirAvailResponse">
+<part name="parameters" element="tns:ticketAirAvailResponse" />
 </message>
 <message name="ticketAirDemand">
 <part name="parameters" element="tns:ticketAirDemand" />
@@ -22,62 +16,69 @@
 <message name="ticketAirDemandResponse">
 <part name="parameters" element="tns:ticketAirDemandResponse" />
 </message>
-<message name="ticketAirCancel">
-<part name="parameters" element="tns:ticketAirCancel" />
-</message>
-<message name="ticketAirCancelResponse">
-<part name="parameters" element="tns:ticketAirCancelResponse" />
-</message>
 <message name="ticketAirPrice">
 <part name="parameters" element="tns:ticketAirPrice" />
 </message>
 <message name="ticketAirPriceResponse">
 <part name="parameters" element="tns:ticketAirPriceResponse" />
 </message>
-<message name="ticketAirAvail">
-<part name="parameters" element="tns:ticketAirAvail" />
+<message name="ticketAirReserv">
+<part name="parameters" element="tns:ticketAirReserv" />
 </message>
-<message name="ticketAirAvailResponse">
-<part name="parameters" element="tns:ticketAirAvailResponse" />
+<message name="ticketAirReservResponse">
+<part name="parameters" element="tns:ticketAirReservResponse" />
+</message>
+<message name="ticketAirCancel">
+<part name="parameters" element="tns:ticketAirCancel" />
+</message>
+<message name="ticketAirCancelResponse">
+<part name="parameters" element="tns:ticketAirCancelResponse" />
+</message>
+<message name="ticketAirConsultTickets">
+<part name="parameters" element="tns:ticketAirConsultTickets" />
+</message>
+<message name="ticketAirConsultTicketsResponse">
+<part name="parameters" element="tns:ticketAirConsultTicketsResponse" />
+</message>
+<message name="ticketAirConsultReserv">
+<part name="parameters" element="tns:ticketAirConsultReserv" />
+</message>
+<message name="ticketAirConsultReservResponse">
+<part name="parameters" element="tns:ticketAirConsultReservResponse" />
 </message>
 <portType name="TicketsHandlerServices">
-<operation name="ticketAirConsult">
-<input wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirConsultRequest" message="tns:ticketAirConsult" />
-<output wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirConsultResponse" message="tns:ticketAirConsultResponse" />
-</operation>
-<operation name="ticketAirReserv">
-<input wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirReservRequest" message="tns:ticketAirReserv" />
-<output wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirReservResponse" message="tns:ticketAirReservResponse" />
+<operation name="ticketAirAvail">
+<input wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirAvailRequest" message="tns:ticketAirAvail" />
+<output wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirAvailResponse" message="tns:ticketAirAvailResponse" />
 </operation>
 <operation name="ticketAirDemand">
 <input wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirDemandRequest" message="tns:ticketAirDemand" />
 <output wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirDemandResponse" message="tns:ticketAirDemandResponse" />
 </operation>
-<operation name="ticketAirCancel">
-<input wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirCancelRequest" message="tns:ticketAirCancel" />
-<output wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirCancelResponse" message="tns:ticketAirCancelResponse" />
-</operation>
 <operation name="ticketAirPrice">
 <input wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirPriceRequest" message="tns:ticketAirPrice" />
 <output wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirPriceResponse" message="tns:ticketAirPriceResponse" />
 </operation>
-<operation name="ticketAirAvail">
-<input wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirAvailRequest" message="tns:ticketAirAvail" />
-<output wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirAvailResponse" message="tns:ticketAirAvailResponse" />
+<operation name="ticketAirReserv">
+<input wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirReservRequest" message="tns:ticketAirReserv" />
+<output wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirReservResponse" message="tns:ticketAirReservResponse" />
+</operation>
+<operation name="ticketAirCancel">
+<input wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirCancelRequest" message="tns:ticketAirCancel" />
+<output wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirCancelResponse" message="tns:ticketAirCancelResponse" />
+</operation>
+<operation name="ticketAirConsultTickets">
+<input wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirConsultTicketsRequest" message="tns:ticketAirConsultTickets" />
+<output wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirConsultTicketsResponse" message="tns:ticketAirConsultTicketsResponse" />
+</operation>
+<operation name="ticketAirConsultReserv">
+<input wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirConsultReservRequest" message="tns:ticketAirConsultReserv" />
+<output wsam:Action="http://services.ticketsHandler.apcb.com/TicketsHandlerServices/ticketAirConsultReservResponse" message="tns:ticketAirConsultReservResponse" />
 </operation>
 </portType>
 <binding name="TicketsHandlerServicesPortBinding" type="tns:TicketsHandlerServices">
 <soap:binding transport="http://schemas.xmlsoap.org/soap/http" style="document" />
-<operation name="ticketAirConsult">
-<soap:operation soapAction="" />
-<input>
-<soap:body use="literal" />
-</input>
-<output>
-<soap:body use="literal" />
-</output>
-</operation>
-<operation name="ticketAirReserv">
+<operation name="ticketAirAvail">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
@@ -95,15 +96,6 @@
 <soap:body use="literal" />
 </output>
 </operation>
-<operation name="ticketAirCancel">
-<soap:operation soapAction="" />
-<input>
-<soap:body use="literal" />
-</input>
-<output>
-<soap:body use="literal" />
-</output>
-</operation>
 <operation name="ticketAirPrice">
 <soap:operation soapAction="" />
 <input>
@@ -113,7 +105,34 @@
 <soap:body use="literal" />
 </output>
 </operation>
-<operation name="ticketAirAvail">
+<operation name="ticketAirReserv">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="ticketAirCancel">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="ticketAirConsultTickets">
+<soap:operation soapAction="" />
+<input>
+<soap:body use="literal" />
+</input>
+<output>
+<soap:body use="literal" />
+</output>
+</operation>
+<operation name="ticketAirConsultReserv">
 <soap:operation soapAction="" />
 <input>
 <soap:body use="literal" />
