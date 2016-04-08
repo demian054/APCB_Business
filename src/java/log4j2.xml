@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Configuration status="WARN">
     <Properties>
-        <Property name="aplicationName">Business</Property>
+        <Property name="BusinessAplicationName">ProdBusiness</Property>
         <Property name="log-path">/usr/tomcat/logs/APCB</Property>
     </Properties>
   
     <Appenders>
-        <RollingFile name="file-log" fileName="${log-path}/${aplicationName}/trace.log"
-            filePattern="${log-path}/${aplicationName}/trace.%d{yyyy-MM-dd}.log">
+        <RollingFile name="file-log-Business" fileName="${log-path}/${BusinessAplicationName}/trace.log"
+            filePattern="${log-path}/${BusinessAplicationName}/trace.%d{yyyy-MM-dd}.log">
             <PatternLayout>  
                 <pattern>[%-5level] %d{yyyy-MM-dd HH:mm:ss.SSS} %X{sessionId} %c{1} - %msg%n</pattern>
             </PatternLayout>
@@ -16,7 +16,7 @@
             </Policies>
         </RollingFile>
         
-        <RollingFile name="file-log-all" fileName="${log-path}/allTrace.log"
+        <RollingFile name="file-log-all" fileName="${log-path}/ProdAllTrace.log"
             filePattern="${log-path}/allTrace.%d{yyyy-MM-dd}.log">
             <PatternLayout>  
                 <pattern>[%-5level] ${aplicationName} %d{yyyy-MM-dd HH:mm:ss.SSS} %X{sessionId} %c{1} - %msg%n</pattern>
@@ -27,15 +27,14 @@
         </RollingFile>
         
         <Console name="console" target="SYSTEM_OUT">
-            <PatternLayout pattern="[%-5level] ${aplicationName} %d{yyyy-MM-dd HH:mm:ss.SSS} %X{sessionId} %c{1} - %msg%n"/>
+            <PatternLayout pattern="[%-5level] ${BusinessAplicationName} %d{yyyy-MM-dd HH:mm:ss.SSS} %X{sessionId} %c{1} - %msg%n"/>
         </Console>
         
     </Appenders>
     <Loggers>
         <Logger name="com.apcb" level="info" additivity="false">
-            <appender-ref ref="file-log" level="info"/>
+            <appender-ref ref="file-log-Business" level="info"/>
             <appender-ref ref="file-log-all" level="info"/>
-            <Appender-Ref ref="console"/>
         </Logger>
         
         <Root level="info" additivity="false">

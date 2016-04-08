@@ -1,0 +1,114 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI at http://jax-ws.dev.java.net. RI's version is JAX-WS RI 2.2-hudson-740-. --><xs:schema xmlns:tns="http://services.ticketsHandler.apcb.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://services.ticketsHandler.apcb.com/">
+
+<xs:element name="ticketAirAvail" type="tns:ticketAirAvail" />
+
+<xs:element name="ticketAirAvailResponse" type="tns:ticketAirAvailResponse" />
+
+<xs:element name="ticketAirCancel" type="tns:ticketAirCancel" />
+
+<xs:element name="ticketAirCancelResponse" type="tns:ticketAirCancelResponse" />
+
+<xs:element name="ticketAirConsultReserv" type="tns:ticketAirConsultReserv" />
+
+<xs:element name="ticketAirConsultReservResponse" type="tns:ticketAirConsultReservResponse" />
+
+<xs:element name="ticketAirConsultTickets" type="tns:ticketAirConsultTickets" />
+
+<xs:element name="ticketAirConsultTicketsResponse" type="tns:ticketAirConsultTicketsResponse" />
+
+<xs:element name="ticketAirDemand" type="tns:ticketAirDemand" />
+
+<xs:element name="ticketAirDemandResponse" type="tns:ticketAirDemandResponse" />
+
+<xs:element name="ticketAirPrice" type="tns:ticketAirPrice" />
+
+<xs:element name="ticketAirPriceResponse" type="tns:ticketAirPriceResponse" />
+
+<xs:element name="ticketAirReserv" type="tns:ticketAirReserv" />
+
+<xs:element name="ticketAirReservResponse" type="tns:ticketAirReservResponse" />
+
+<xs:complexType name="ticketAirCancel">
+<xs:sequence>
+<xs:element name="request" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ticketAirCancelResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ticketAirPrice">
+<xs:sequence>
+<xs:element name="request" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ticketAirPriceResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ticketAirDemand">
+<xs:sequence>
+<xs:element name="request" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ticketAirDemandResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ticketAirConsultTickets">
+<xs:sequence>
+<xs:element name="request" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ticketAirConsultTicketsResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ticketAirConsultReserv">
+<xs:sequence>
+<xs:element name="request" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ticketAirConsultReservResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ticketAirReserv">
+<xs:sequence>
+<xs:element name="request" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ticketAirReservResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ticketAirAvail">
+<xs:sequence>
+<xs:element name="request" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="ticketAirAvailResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:string" minOccurs="0" />
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

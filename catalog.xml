@@ -8,4 +8,6 @@
     <system systemId="http://localhost:8080/APCB_PaymentsHandrer/PaymentsHandlerServices?xsd=1" uri="src/conf/xml-resources/web-service-references/PaymentsHandlerServices/wsdl/localhost_8080/APCB_PaymentsHandrer/PaymentsHandlerServices.xsd_1.xsd"/>
     <system systemId="http://localhost:8080/APCB_TicketsHandler/TicketsHandlerServices?wsdl" uri="src/conf/xml-resources/web-service-references/TicketHandlerServices/wsdl/localhost_8080/APCB_TicketsHandler/TicketsHandlerServices.wsdl"/>
     <system systemId="http://localhost:8080/APCB_TicketsHandler/TicketsHandlerServices?xsd=1" uri="src/conf/xml-resources/web-service-references/TicketHandlerServices/wsdl/localhost_8080/APCB_TicketsHandler/TicketsHandlerServices.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/1.1_APCB_TicketsHandler/TicketsHandlerServices?wsdl" uri="src/conf/xml-resources/web-service-references/TicketHandlerServices/wsdl/localhost_8080/1.1_APCB_TicketsHandler/TicketsHandlerServices.wsdl"/>
+    <system systemId="http://localhost:8080/1.1_APCB_TicketsHandler/TicketsHandlerServices?xsd=1" uri="src/conf/xml-resources/web-service-references/TicketHandlerServices/wsdl/localhost_8080/1.1_APCB_TicketsHandler/TicketsHandlerServices.xsd_1.xsd"/>
 </catalog>
